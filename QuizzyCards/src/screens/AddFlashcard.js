@@ -13,9 +13,6 @@ export default function AddFlashcard({ Navigation }) {
   const [answer, setAnswer] = useState("");
   const addCard = async () => {
     if (question != "" && answer != "") {
-      //   AsyncStorage.setItem("flashcard", JSON.stringify({ question, answer }))
-      //     .then(() => console.log("Card added"))
-      //     .catch((error) => console.error(error));
       const flashcard = { question, answer }; // Creates new Flashcard
       const storedFlashcards =
         JSON.parse(await AsyncStorage.getItem("flashcards")) || []; //This line will get the array of flashcards already present in the storage and will be assigned to flashcards array.
